@@ -15,6 +15,7 @@ Route::get('/horeee-saya-bisa', function(){
     return 'Ini adalah halaman saya...hore';
 });
 
+//ini adalah komentar dari daniel
 Route::get('/bisa-aja-bikin-lagi', function(){
     return 'ini loh tak bikin lagi';
 });
