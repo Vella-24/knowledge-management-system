@@ -20,3 +20,4 @@ Route::get('/bisa-aja-bikin-lagi', function(){
     return 'ini loh tak bikin lagi';
 });
 
+//haloo
