@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UtamaController;
-// halooow -kaylee
+//ini adalah perubahan dari daniel
 // ini adalah homepage yang mengarah pada controller
 Route::get('/', [UtamaController::class, 'boleh']);
 
@@ -22,3 +22,5 @@ Route::get('/bisa-aja-bikin-lagi', function(){
 
 //haloo
 //tes
+
+//coba
