@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UtamaController;
-//hola
+//ini adalah perubahan dari daniel
 // ini adalah homepage yang mengarah pada controller
 Route::get('/', [UtamaController::class, 'boleh']);
 
