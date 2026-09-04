@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UtamaController;
+use App\Http\Controllers\KategoriController;
 //ini adalah perubahan dari daniel
 // ini adalah homepage yang mengarah pada controller
 Route::get('/', [UtamaController::class, 'boleh']);
 
+Route::get('/daftar-kategori', [KategoriController::class, 'tampil']); 
 // Route::get('/', function () {
 //     return view('utama');
 // });
