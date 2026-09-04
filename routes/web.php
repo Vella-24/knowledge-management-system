@@ -13,6 +13,9 @@ Route::get('/daftar-kategori', [KategoriController::class, 'tampil']);
 Route::get('/tambah-kategori', [KategoriController::class, 'create']); 
 Route::post('/simpan-kategori', [KategoriController::class, 'simpan']); 
 Route::get('/daftar-barang', [BarangController::class, 'tampil']); 
+Route::delete('/hapus-kategori/{kategori}', [KategoriController::class, 'hapus'])->name('kategori.hapus'); 
+Route::get('/ubah-kategori/{kategori}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
+Route::put('/update-kategori',[KategoriController::class, 'update']);
 // Route::get('/', function () {
 //     return view('utama');
 // });

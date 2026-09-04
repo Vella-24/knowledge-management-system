@@ -6,17 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="{{ url('/simpan-kategori')}}">
+    <form method="POST" action="{{ url('/update-kategori')}}">
         @csrf
+        @method('PUT')
+        <input type="hidden" name="id" value="{{ $kategori->id }}"/>
         <table>
             <tr>
                 <td>Nama</td>
-                <td> <input type="text" name="nama"/></td>
+                <td> <input type="text" name="nama" value="{{ $kategori->nama}}"/></td>
             </tr>
             <tr>
                 <td>Deskripsi</td>
                 <td>
-                    <textarea name="deskripsi"></textarea> 
+                    <textarea name="deskripsi">
+                        {{ $kategori->deskripsi}}</textarea> 
                 </td>
             </tr>
             <tr>

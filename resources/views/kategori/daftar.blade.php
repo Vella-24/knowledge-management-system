@@ -15,6 +15,14 @@
         <tr>
             <td>{{$kategori->nama }}</td>
             <td>{{$kategori->deskripsi }}</td>
+            <td>
+                <form method="POST" action="{{ route('kategori.hapus', $kategori)}}">
+                    @method('DELETE')
+                    @csrf 
+                    <input type="submit" value="Hapus"/>
+                </form>
+                <a href="{{ route('kategori.ubah', $kategori)}}">[UBAH]</a>
+            </td>
         </tr>
         @endforeach
     </table>
