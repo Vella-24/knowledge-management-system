@@ -13,4 +13,9 @@ class KategoriController extends Controller
         return view('kategori.daftar', 
         ['kategoris' => $kategoris]); 
     }
+
+    public function create()
+    {
+        return view('kategori.create');
+    }
 }

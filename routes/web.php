@@ -9,6 +9,8 @@ use App\Http\Controllers\KategoriController;
 Route::get('/', [UtamaController::class, 'boleh']);
 
 Route::get('/daftar-kategori', [KategoriController::class, 'tampil']); 
+Route::get('/tambah-kategori', [KategoriController::class, 'create']); 
+Route::post('/simpan-kategori', [KategoriController::class, 'simpan']); 
 // Route::get('/', function () {
 //     return view('utama');
 // });
