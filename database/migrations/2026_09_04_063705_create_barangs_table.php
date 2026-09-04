@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama', 100); 
             $table->decimal('harga', total: 9, places: 0);
-            $table->interger('stok')->default(0); 
-            $table->unsigmedBigInterger('kategori_id');
+            $table->integer('stok')->default(0); 
+            $table->unsignedBigInteger('kategori_id');
             $table->foreign('kategori_id')->references('id')->on('kategoris'); 
             $table->timestamps();
         });

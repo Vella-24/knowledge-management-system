@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\BarangController;
 //ini adalah perubahan dari daniel
 // ini adalah homepage yang mengarah pada controller
 Route::get('/', [UtamaController::class, 'boleh']);
@@ -11,6 +12,7 @@ Route::get('/', [UtamaController::class, 'boleh']);
 Route::get('/daftar-kategori', [KategoriController::class, 'tampil']); 
 Route::get('/tambah-kategori', [KategoriController::class, 'create']); 
 Route::post('/simpan-kategori', [KategoriController::class, 'simpan']); 
+Route::get('/daftar-barang', [BarangController::class, 'tampil']); 
 // Route::get('/', function () {
 //     return view('utama');
 // });
