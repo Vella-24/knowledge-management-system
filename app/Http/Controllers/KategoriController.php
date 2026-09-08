@@ -15,7 +15,7 @@ class KategoriController extends Controller
         return view('kategori.daftar', 
         ['kategoris' => $kategoris]); 
     }
-S
+
     public function create()
     {
         return view('kategori.create');
@@ -25,18 +25,35 @@ S
     {
         /*DB::table('kategoris')->insert(['nama'=> $request->get('nama'), 
         'deskripsi'=> $request->get('deskripsi')]); */
-        $kategori = new Kategori ();
-        $kategori->nama = $request->get('nama');
-        $kategori->deskripsi = $request->get('deskripsi');
-        $kategori->save();
-        return redirect('daftar-kategori'); 
+        // $kategori = new Kategori ();
+        // $kategori->nama = $request->get('nama');
+        // $kategori->deskripsi = $request->get('deskripsi');
+        // $kategori->save();
+        // return redirect('daftar-kategori'); 
+
+        //return redirect('daftar-kategori')->with('success', 'Kategori berhasil disimpan!');
+
+        try { 
+            $kategori = new Kategori(); 
+            $kategori->nama = $request->get('nama'); 
+            $kategori->deskripsi = $request->get('deskripsi'); 
+            $kategori->save(); return redirect('daftar-kategori') ->with('success', 'Kategori berhasil disimpan!'); 
+            } 
+        catch (\Exception $e) { return redirect('daftar-kategori') ->with('error', 'Kategori gagal disimpan!'); 
+        }
     }
 
     public function hapus(Kategori $kategori)
     {
-        $kategori->delete(); 
+        // $kategori->delete(); 
 
-        return redirect('daftar-kategori'); 
+        // return redirect('daftar-kategori');
+        
+        try { 
+            $kategori->delete(); return redirect('daftar-kategori') ->with('success', 'Kategori berhasil dihapus!'); 
+            } 
+        catch (\Exception $e) { return redirect('daftar-kategori') ->with('error', 'Kategori gagal dihapus!'); 
+        }
     }
 
     public function ubah(Kategori $kategori)
@@ -46,10 +63,21 @@ S
 
     public function update(Request $request)
     {
-        $kategori = Kategori::find($request->get('id')); 
-        $kategori->nama = $request->get('nama');
-        $kategori->deskripsi = $request->get('deskripsi'); 
-        $kategori->save();
-        return redirect('daftar-kategori'); 
-    }
+        // $kategori = Kategori::find($request->get('id')); 
+        // $kategori->nama = $request->get('nama');
+        // $kategori->deskripsi = $request->get('deskripsi'); 
+        // $kategori->save();
+        //return redirect('daftar-kategori'); 
+        // return redirect('daftar-kategori')->with('success', 'Kategori berhasil disimpan!');
+
+        try { 
+            $kategori = Kategori::find($request->get('id')); 
+            if (!$kategori) { return redirect('daftar-kategori') ->with('error', 'Kategori tidak ditemukan!'); } 
+            $kategori->nama = $request->get('nama'); $kategori->deskripsi = $request->get('deskripsi'); 
+            $kategori->save(); return redirect('daftar-kategori') ->with('success', 'Kategori berhasil diperbarui!'); 
+            } 
+        catch (\Exception $e) { return redirect('daftar-kategori') ->with('error', 'Kategori gagal diperbarui!');
+         } 
+        }
+    
 }

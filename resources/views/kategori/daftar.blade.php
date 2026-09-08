@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+
+   @if(session('success')) <script> alert("{{ session('success') }}"); </script> 
+   @endif 
+   @if(session('error')) <script> alert("{{ session('error') }}"); </script> 
+   @endif
     <table border="1"> 
         <tr>
             <th>Nama</th>
@@ -16,11 +21,14 @@
             <td>{{$kategori->nama }}</td>
             <td>{{$kategori->deskripsi }}</td>
             <td>
-                <form method="POST" action="{{ route('kategori.hapus', $kategori)}}">
+                <!-- <form method="POST" action="{{ route('kategori.hapus', $kategori)}}">
                     @method('DELETE')
                     @csrf 
                     <input type="submit" value="Hapus"/>
-                </form>
+                </form> -->
+                <form method="POST" action="{{ route('kategori.hapus', $kategori) }}" 
+                onsubmit="return confirm('Apakah Anda yakin ingin menghapus kategori {{ $kategori->nama }}?');"> 
+                @method('DELETE') @csrf <input type="submit" value="Hapus"/> </form>
                 <a href="{{ route('kategori.ubah', $kategori)}}">[UBAH]</a>
             </td>
         </tr>
