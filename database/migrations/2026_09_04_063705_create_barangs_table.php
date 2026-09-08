@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('barangs', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama', 100); 
-            $table->decimal('harga', total: 9, places: 0);
-            $table->integer('stok')->default(0); 
-            $table->unsignedBigInteger('kategori_id');
-            $table->foreign('kategori_id')->references('id')->on('kategoris'); 
-            $table->timestamps();
-        });
+        // Schema::create('barangs', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('nama', 100); 
+        //     $table->decimal('harga', total: 9, places: 0);
+        //     $table->integer('stok')->default(0); 
+        //     $table->unsignedBigInteger('kategori_id');
+        //     $table->foreign('kategori_id')->references('id')->on('kategoris'); 
+        //     $table->timestamps();
+        // });
     }
 
     /**
