@@ -33,6 +33,11 @@ class KategoriController extends Controller
 
         //return redirect('daftar-kategori')->with('success', 'Kategori berhasil disimpan!');
 
+         $request->validate([
+        'nama' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+        'deskripsi' => 'required'
+        ]);
+        
         try { 
             $kategori = new Kategori(); 
             $kategori->nama = $request->get('nama'); 

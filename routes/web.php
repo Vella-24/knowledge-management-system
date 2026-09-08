@@ -12,10 +12,17 @@ Route::get('/', [UtamaController::class, 'boleh']);
 Route::get('/daftar-kategori', [KategoriController::class, 'tampil']); 
 Route::get('/tambah-kategori', [KategoriController::class, 'create']); 
 Route::post('/simpan-kategori', [KategoriController::class, 'simpan']); 
-Route::get('/daftar-barang', [BarangController::class, 'tampil']); 
 Route::delete('/hapus-kategori/{kategori}', [KategoriController::class, 'hapus'])->name('kategori.hapus'); 
 Route::get('/ubah-kategori/{kategori}', [KategoriController::class, 'ubah'])->name('kategori.ubah');
 Route::put('/update-kategori',[KategoriController::class, 'update']);
+
+Route::get('/daftar-barang', [BarangController::class, 'tampil']); 
+Route::get('/tambah-barang', [BarangController::class, 'create']); 
+Route::post('/simpan-barang', [BarangController::class, 'simpan']); 
+Route::delete('/hapus-barang/{barang}', [BarangController::class, 'hapus'])->name('barang.hapus'); 
+Route::get('/ubah-barang/{barang}', [BarangController::class, 'ubah'])->name('barang.ubah');
+Route::put('/update-barang',[BarangController::class, 'update']);
+
 // Route::get('/', function () {
 //     return view('utama');
 // });
