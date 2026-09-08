@@ -75,6 +75,11 @@ class KategoriController extends Controller
         //return redirect('daftar-kategori'); 
         // return redirect('daftar-kategori')->with('success', 'Kategori berhasil disimpan!');
 
+         $request->validate([
+        'nama' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+        'deskripsi' => 'required'
+        ]);
+
         try { 
             $kategori = Kategori::find($request->get('id')); 
             if (!$kategori) { return redirect('daftar-kategori') ->with('error', 'Kategori tidak ditemukan!'); } 

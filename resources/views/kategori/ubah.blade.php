@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+        <p>{{ $error }}</p>
+    @endforeach
+    @endif
+    
     <form method="POST" action="{{ url('/update-kategori')}}">
         @csrf
         @method('PUT')
