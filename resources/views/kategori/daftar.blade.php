@@ -11,6 +11,11 @@
    @endif 
    @if(session('error')) <script> alert("{{ session('error') }}"); </script> 
    @endif
+
+    <a href="{{ url('/tambah-kategori') }}">
+        Tambah Kategori
+    </a>
+    <br></br>
     <table border="1"> 
         <tr>
             <th>Nama</th>
