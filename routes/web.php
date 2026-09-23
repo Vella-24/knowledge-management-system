@@ -43,4 +43,4 @@ Route::get('/bisa-aja-bikin-lagi', function(){
 //lagi
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
