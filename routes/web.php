@@ -43,4 +43,6 @@ Route::get('/bisa-aja-bikin-lagi', function(){
 //lagi
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get ('/coba-qr', [UtamaController::class, 'cobaQr']); 
